@@ -77,7 +77,9 @@ dat.red<- dat.red[,-grep("meanFreq",names(dat.red))]
 #We substitute the activities numbers ID in their variable column by their 
 #complete label (nº 3 in the request list)
 
-for(i in 1:6){dat.red$activity[which(dat.red$activity==i)]<-act.label$V2[i]}
+for(i in 1:6){
+        dat.red$activity[which(dat.red$activity==i)]<-as.character(act.label$V2)[i]
+        }
 
 #Finally from the reduced data set we create a second, independent tidy data set
 # with the average of each variable for each activity and each subject (nº5 in
